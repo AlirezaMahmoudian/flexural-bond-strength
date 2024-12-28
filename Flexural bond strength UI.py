@@ -203,19 +203,19 @@ class Ui_Form(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
-        self.lineEdit_10 = QtWidgets.QLineEdit(Form)
-        self.lineEdit_10.setGeometry(QtCore.QRect(610, 630, 341, 51))
-        self.lineEdit_10.setObjectName("lineEdit_10")
-        self.label_10 = QtWidgets.QLabel(Form)
-        self.label_10.setGeometry(QtCore.QRect(270, 640, 321, 31))
+#         self.lineEdit_10 = QtWidgets.QLineEdit(Form)
+#         self.lineEdit_10.setGeometry(QtCore.QRect(900, 630, 341, 51))
+#         self.lineEdit_10.setObjectName("lineEdit_10")
+#         self.label_10 = QtWidgets.QLabel(Form)
+#         self.label_10.setGeometry(QtCore.QRect(270, 640, 321, 31))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(15)
         font.setBold(True)
         font.setItalic(True)
         font.setWeight(75)
-        self.label_10.setFont(font)
-        self.label_10.setObjectName("label_10")
+#         self.label_10.setFont(font)
+#         self.label_10.setObjectName("label_10")
         self.label_12 = QtWidgets.QLabel(Form)
         self.label_12.setGeometry(QtCore.QRect(780, 80, 411, 351))
         font = QtGui.QFont()
@@ -288,7 +288,7 @@ class Ui_Form(object):
         self.comboBox_4.setItemText(1, _translate("Form", "Bond breaker"))
         self.comboBox_4.setItemText(2, _translate("Form", "Release agent"))
         self.comboBox_4.setItemText(3, _translate("Form", "Splatter"))
-        self.label_10.setText(_translate("Form", "Failure mode:"))
+#         self.label_10.setText(_translate("Form", "Failure mode:"))
         self.label_14.setText(_translate("Form", "Input features:"))
 
     def predict(self):
@@ -337,13 +337,13 @@ class Ui_Form(object):
         # Make predictions
         predicted_tmax = round(model.predict(input_features)[0], 2)
 
-        # Determine failure mode
-        if predicted_tmax < 1.0:
-            predicted_failure_type = "Bond failure"
-        elif 1.0 <= predicted_tmax < 2.0:
-            predicted_failure_type = "Shear"
-        else:
-            predicted_failure_type = "Bar rupture"
+#         # Determine failure mode
+#         if predicted_tmax < 1.0:
+#             predicted_failure_type = "Bond failure"
+#         elif 1.0 <= predicted_tmax < 2.0:
+#             predicted_failure_type = "Shear"
+#         else:
+#             predicted_failure_type = "Bar rupture"
 
         # Display the results in the line edits with larger and bold font
         font = QFont()
@@ -353,8 +353,8 @@ class Ui_Form(object):
         self.lineEdit_9.setFont(font)
         self.lineEdit_9.setText(str(predicted_tmax))
 
-        self.lineEdit_10.setFont(font)
-        self.lineEdit_10.setText(predicted_failure_type)
+#         self.lineEdit_10.setFont(font)
+#         self.lineEdit_10.setText(predicted_failure_type)
 
 
 if __name__ == "__main__":
@@ -366,10 +366,4 @@ if __name__ == "__main__":
     ui.setupUi(Form)
     Form.show()
     sys.exit(app.exec_())
-
-
-# In[ ]:
-
-
-
 
